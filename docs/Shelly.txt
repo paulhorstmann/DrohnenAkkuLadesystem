@@ -1,0 +1,11 @@
+shelly:
+
+----------------------
+Weboberfläche:
+
+Benutzer: omnd
+Passwort: %qvAe4%pl%ri
+----------------------
+
+Authcode:
+JO3snZyywQPgApv04NjPjmnk72RSdL
