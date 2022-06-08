@@ -7,5 +7,7 @@ Benutzer: omnd
 Passwort: %qvAe4%pl%ri
 ----------------------
 
+ip: 192.168.0.103 
+
 Authcode:
 JO3snZyywQPgApv04NjPjmnk72RSdL

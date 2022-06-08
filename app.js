@@ -56,10 +56,9 @@ process.on('uncaughtException', exitHandler.bind(null, { exit: true }));
 
 async function checkLastAlarm() {
     const callResult = await callDivera();
-
     if (callResult.success == true && callResult.data.group && callResult.data.id) {
         if (!(await isCacheOutdated(callResult.data))) {
-            chargeBatteries(1000 * 10) //one hour
+            chargeBatteries(1000 * 60 * 60) //one hour
         }
     } else {
         log.info('No Alarm detectet')
