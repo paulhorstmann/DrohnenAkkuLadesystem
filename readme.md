@@ -4,8 +4,8 @@
 
 ### 1. Raspberry Pi einrichten
 
- Raspberry Pi Lite installieren
--
+#### Raspberry Pi Lite installieren
+
 Um den Raspberry Pi Lite zu installieren, installiere zunächst Raspberry Pi Imager.
 
 Raspberry Pi Imager Downloadlink: [raspberrypi.com/software](raspberrypi.com/software)
@@ -15,9 +15,8 @@ Wähle im Raspberry Pi Imager unter dem Menupunkt, "Raspbery PI OS (other)", Ras
 Hilfe dazu findest du hier:
 [raspberrypi.com/documentation/computers/getting-started.html](https://www.raspberrypi.com/documentation/computers/getting-started.html)
 
+#### Aktiviere SSH auf deinem Raspberry Pi.
 
-Aktiviere SSH auf deinem Raspberry Pi.
--
 Erstelle eine leere Datei in dem Stammorder der SD Karte mit dem Namen `SSH`
 
 Hilfe dazu findest du hier:
@@ -26,8 +25,8 @@ Hilfe dazu findest du hier:
 Beachte die Notiz zu Headless OS 
 
 
-WLAN einrichten
--
+#### WLAN einrichten
+
 Erstelle eine Datei in dem Stammorder der SD Karte mit dem Namen `wpa_supplicant.conf`.
 Kopier in die Datei folgeden Inhalt:
 ```HCL
@@ -44,8 +43,7 @@ Editiere die Platzhalter NETZWERK-NAME & NETZWERK-PASSWORD zu den dem entspreche
 
 🠚 Starte den Raspberry Pi
 
-Mit SSH verbinden
--
+#### Mit SSH verbinden
 
 Es gibt viele Möglichkeiten sich mit ssh auf den Raspberry Pi zu verbinden.
 Im Folgenden verwende ich den Standart Windows 11 SSH-Client über CMD
