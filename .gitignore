@@ -1,4 +1,4 @@
 /config/.env
+/doc/Shelly.txt
 node_modules
 yarn.lock
-doc 

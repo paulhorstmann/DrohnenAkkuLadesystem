@@ -1,4 +1,4 @@
-# Akku Lade Automatisierung - divera 24/7 🚨 ⇆ Shelly⚡
+# AkkuLadeAutomatisierung - divera 24/7 🚨 ⇆ Shelly⚡
 
 ## Installtion & Setup
 
