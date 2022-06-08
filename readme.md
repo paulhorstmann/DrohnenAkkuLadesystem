@@ -15,6 +15,7 @@ Wähle im Raspberry Pi Imager unter dem Menupunkt, "Raspbery PI OS (other)", Ras
 Hilfe dazu findest du hier:
 [raspberrypi.com/documentation/computers/getting-started.html](https://www.raspberrypi.com/documentation/computers/getting-started.html)
 
+---
 #### Aktiviere SSH auf deinem Raspberry Pi.
 
 Erstelle eine leere Datei in dem Stammorder der SD Karte mit dem Namen `SSH`
@@ -24,7 +25,7 @@ Hilfe dazu findest du hier:
 
 Beachte die Notiz zu Headless OS 
 
-
+---
 #### WLAN einrichten
 
 Erstelle eine Datei in dem Stammorder der SD Karte mit dem Namen `wpa_supplicant.conf`.
@@ -43,6 +44,7 @@ Editiere die Platzhalter NETZWERK-NAME & NETZWERK-PASSWORD zu den dem entspreche
 
 🠚 Starte den Raspberry Pi
 
+---
 #### Mit SSH verbinden
 
 Es gibt viele Möglichkeiten sich mit ssh auf den Raspberry Pi zu verbinden.
