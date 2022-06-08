@@ -1,8 +1,9 @@
-# divera 24/7 ⇆ Shelly - Akku Lade Automatisierung
+# Akku Lade Automatisierung - divera 24/7 🚨 ⇆ Shelly⚡
 
 ## Installtion & Setup
 
 ### 1. Raspberry Pi einrichten
+---
 
 #### Raspberry Pi Lite installieren
 
@@ -48,7 +49,7 @@ Editiere die Platzhalter NETZWERK-NAME & NETZWERK-PASSWORD zu den dem entspreche
 #### Mit SSH verbinden
 
 Es gibt viele Möglichkeiten sich mit ssh auf den Raspberry Pi zu verbinden.
-Im Folgenden verwende ich den Standart Windows 11 SSH-Client über CMD
+Im Folgenden verwende ich den Standard Windows 11 SSH-Client über CMD
 
 Eine gute Alternative ist aber [Putty](https://www.putty.org/)
 
@@ -58,11 +59,11 @@ C:\Users\Benutzer\Desktop> ssh pi@raspberrypi
 
 Hilfe dazu findest du hier: [digitalocean.com/community/tutorials/how-to-use-ssh-to-connect-to-a-remote-server-de](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-to-connect-to-a-remote-server-de)
 
-Gib als Standartpasswort: "raspberry" ein um dich einzuloggen
+Gib als Standardpasswort: "raspberry" ein um dich einzuloggen
 
 ---
-### 2. Standart Passwort ändern
-Ändere das Standart Passwort um unautorisierte Logins zu verhindern
+### 2. Standard Passwort ändern
+Ändere das Standard Passwort um unautorisierte Logins zu verhindern
 ```Console
 pi@raspberrypi:~ $ sudo passwd pi
 New password:<Neues Passwort>
@@ -102,7 +103,7 @@ pi@raspberrypi:~ $ git --version
 git version 2.30.2
 ```
 
-### 5. Node JS instaltion über Node Version Manager 
+### 5. Node JS installation über Node Version Manager 
 Um NVM zu installieren, folge dieser Installationsanleitung:
 https://github.com/nvm-sh/nvm#install--update-script
 
@@ -117,6 +118,7 @@ pi@raspberrypi:~ $ nvm -v
 ```Console
 pi@raspberrypi:~ $ nvm install node --lts
 ```
+Wenn du hierzu Hilfe brauchst sieh dir dieses Video bis 1:40 an: https://youtu.be/DZPUO2DcE0g
 
 Nach der Installation sollte nocheimal überprüft werden ob Node auf dem System richtig funktioniert und [NPM](https://www.npmjs.com/) upgedatet werden
 ```Console
@@ -127,3 +129,6 @@ pi@raspberrypi:~ $ npm i npm - g
 pi@raspberrypi:~ $ npm -v
 8.5.1
 ```
+
+### 6. Automatierung installieren und einrichten
+
