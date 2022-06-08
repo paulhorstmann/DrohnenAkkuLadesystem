@@ -1,0 +1,4 @@
+/config/.env
+/doc/*.txt
+node_modules
+yarn.lock
