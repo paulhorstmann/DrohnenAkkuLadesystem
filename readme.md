@@ -30,7 +30,7 @@ Beachte die Notiz zu Headless OS
 #### WLAN einrichten
 
 Erstelle eine Datei in dem Stammorder der SD Karte mit dem Namen `wpa_supplicant.conf`.
-Kopier in die Datei folgeden Inhalt:
+Kopiere in die Datei folgeden Inhalt:
 ```HCL
 country=DE
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
@@ -59,7 +59,7 @@ C:\Users\Benutzer\Desktop> ssh pi@raspberrypi
 
 Hilfe dazu findest du hier: [digitalocean.com/community/tutorials/how-to-use-ssh-to-connect-to-a-remote-server-de](https://www.digitalocean.com/community/tutorials/how-to-use-ssh-to-connect-to-a-remote-server-de)
 
-Gib als Standardpasswort: "raspberry" ein um dich einzuloggen
+Gib als Standardpasswort: `raspberry` ein um dich einzuloggen
 
 ---
 ### 2. Standard Passwort ändern
@@ -107,7 +107,7 @@ git version 2.30.2
 Um NVM zu installieren, folge dieser Installationsanleitung:
 https://github.com/nvm-sh/nvm#install--update-script
 
-Über prüfe die Installation von NVM mit folgendem Befehl
+Überprüfe die Installation von NVM mit folgendem Befehl
 ```Console
 pi@raspberrypi:~ $ nvm -v
 0.39.1 
@@ -118,7 +118,7 @@ pi@raspberrypi:~ $ nvm -v
 ```Console
 pi@raspberrypi:~ $ nvm install node --lts
 ```
-Wenn du hierzu Hilfe brauchst sieh dir dieses Video bis 1:40 an: https://youtu.be/DZPUO2DcE0g
+Wenn du hierzu Hilfe brauchst, sieh dir dieses Video bis 1:40 an: https://youtu.be/DZPUO2DcE0g
 
 Nach der Installation sollte nocheimal überprüft werden ob Node auf dem System richtig funktioniert und [NPM](https://www.npmjs.com/) upgedatet werden
 ```Console
@@ -132,3 +132,40 @@ pi@raspberrypi:~ $ npm -v
 
 ### 6. Automatierung installieren und einrichten
 
+```Console
+pi@raspberrypi:~ $ git clone https://github.com/paulhorstmann/DrohnenAkkuLadesystem.git
+...
+pi@raspberrypi:~ $ cd DrohnenAkkuLadesystem
+pi@raspberrypi:~/DrohnenAkkuLadesystem $ npm install
+```
+### 7. Richte den Shelly ein
+1. Stecke den Shelly Plug in die Steckdose
+2. Verbinde dich mit dem Wlan, das darauflogend aufgebaut wird
+3. Öffne das Shelly Webinterface über http://192.168.33.1
+4. Erstelle für den Shelly ein Benutzername und ein Passwort
+
+> ❗Achtung ❗<br>
+> Erstelle dir ein kryptisches Passwort (über Keepass oder so) und in dem Passwort darf THW nicht enthalten sein
+ 
+5. Verbinde den Shelly mit deinem WLAN
+6. 
+### 8. 
+
+### 7. Deploying mit PM2
+Installiere PM2
+```Console
+pi@raspberrypi:~/DrohnenAkkuLadesystem $ npm install pm2 -g 
+```
+
+Setze den Startpunkt und den Name fest
+```Console
+pi@raspberrypi:~/DrohnenAkkuLadesystem $ pm2 start app.js --name DroLaSy
+pi@raspberrypi:~/DrohnenAkkuLadesystem $ pm2 status DroLaSy
+pi@raspberrypi:~/DrohnenAkkuLadesystem $ pm2 logs
+```
+
+Setze PM2 in den Startup Prozess
+```Console
+pi@raspberrypi:~/DrohnenAkkuLadesystem $ sudo pm2 startup
+pi@raspberrypi:~/DrohnenAkkuLadesystem $ sudo pm2 save
+```
