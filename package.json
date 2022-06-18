@@ -2,14 +2,23 @@
   "dependencies": {
     "axios": "^0.22.0",
     "body-parser": "^1.19.0",
+    "chalk": "^5.0.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "log-update": "^5.0.1",
+    "mqtt": "^4.3.7",
     "node-schedule": "^2.1.0"
   },
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
-    "test": "exit 0"
+    "start": "ts-node ./src/app.ts",
+    "dev": "nodemon",
+    "build": "rimraf ./build && tsc"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^17.0.42",
+    "@types/node-schedule": "^2.1.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.8.1"
+  }
 }

@@ -1,4 +1,4 @@
-constfontcolor = {
+const constfontcolor = {
     Reset: '\x1b[0m',
     Bright: '\x1b[1m',
     Dim: '\x1b[2m',
@@ -25,3 +25,5 @@ constfontcolor = {
     BgCyan: '\x1b[46m',
     BgWhite: '\x1b[47m',
 };
+
+export default constfontcolor

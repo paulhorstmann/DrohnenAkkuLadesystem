@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        /* Visit https://aka.ms/tsconfig.json to read more about this file */
+        "target": "es2017",
+        "module": "commonjs",
+        "outDir": "./build",
+        "esModuleInterop": true,
+        "skipLibCheck": true
+    }
+}

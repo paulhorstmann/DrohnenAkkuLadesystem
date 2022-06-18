@@ -1,6 +1,12 @@
 {
+    "watch": [
+        "src"
+    ],
+    "ext": "ts",
     "ignore": [
         "*.json",
-        "README"
-    ]
+        "README",
+        "src/**/*.spec.ts"
+    ],
+    "exec": "ts-node ./src/app.ts"
 }

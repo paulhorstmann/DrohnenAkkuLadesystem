@@ -1,20 +1,18 @@
 {
     "Shellys": {
-        "<shelly-name>": {
-            "ip": "<shelly-ip>",
-            "hostname": "<shelly-hostname>",
-            "username": "<shelly-username>",
-            "password": "<shelly password>"
+        "__shelly_name__": {
+            "ip": "__shelly_ip__",
+            "hostname": "__shelly_hostname__",
+            "username": "__shelly_username__",
+            "password": "__shelly password__"
         }
     },
     "DiveraJobs": {
-        "<jo ip>": {
-            "groups": [
-                84420
-            ],
-            "shelly": "THW-TruppUL-Akkus",
+        "__job_name__": {
+            "groups": [],
+            "shelly": "__shelly_name__",
             "job": {
-                "timer": "30000"
+                "timer": "__ms__"
             }
         }
     },
