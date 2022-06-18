@@ -1,0 +1,22 @@
+{
+    "Shellys": {
+        "<shelly-name>": {
+            "ip": "<shelly-ip>",
+            "hostname": "<shelly-hostname>",
+            "username": "<shelly-username>",
+            "password": "<shelly password>"
+        }
+    },
+    "DiveraJobs": {
+        "<jo ip>": {
+            "groups": [
+                84420
+            ],
+            "shelly": "THW-TruppUL-Akkus",
+            "job": {
+                "timer": "30000"
+            }
+        }
+    },
+    "diveraCallFrequence": "*/30 * * * * *"
+}
