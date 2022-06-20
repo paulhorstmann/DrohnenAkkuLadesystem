@@ -212,10 +212,9 @@ Ergänze die Platzhalter mit entsprechenden Werten
 
 Um Dievera erfolgreich mit dem Shelly zu verbinden achte darauf, dass der Shellyname im Objekt Shelly (hier Zeile 3) und der Shellyname im DiveraJob übereinstimmt.
 
-Füge dem DiveraJob Objekt unter groups noch die GruppenID hinzu die du abfragen möchtest. Beispiel: `groups: [37483, 83293]`
+Füge dem DiveraJob Objekt unter groups noch die GruppenID hinzu die du abfragen möchtest. Beispiel: `"groups": [37483, 83293]`
 
 Die jeweilige Gruppen ID findest du auf <https://app.divera247.com> unter Verwaltung -> Gruppen -> Aktions Button jeweilige Gruppe -> bearbeiten -> als URL Parameter id
-
 
 Kopiere `./config/_.env` zu `./config/.env`  und öffne die Datei mit Nano
 
