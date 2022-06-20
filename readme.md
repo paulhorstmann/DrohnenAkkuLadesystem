@@ -1,4 +1,4 @@
-# AkkuLadeAutomatisierung - divera 24/7 🚨 ⇆ Shelly⚡
+# Diver-Shelly-Broker - divera 24/7 🚨 ⇆ Shelly⚡
 
 ## Installtion & Setup
 
@@ -153,10 +153,10 @@ pi@raspberrypi:~ $ npm -v
 
 1. Stecke den Shelly Plug in die Steckdose oder verbinde sie anderwaltig mit dem Stromnetz
 2. Verbinde dich mit dem Wlan, das darauffolgend aufgebaut wird
-3. Öffne das Shelly Webinterface über <http://192.168.33.1> oder über den Hostname: <http://<wlan_name_shelly>>
+3. Öffne das Shelly Webinterface über <http://192.168.33.1> oder über den Hostname: http://<wlan_name_shelly>
 4. Erstelle für den Shelly ein Benutzername und ein Passwort für das Webinterface
 5. Verbinde den Shelly mit deinem WLAN unter dem Menupunkt Internet als Wlan-Client
-6. Verbinde dich nun mit deinem WLAN und rufe entweder <http://<wlan_name_shelly>> auf oder verbindedich über die neue IP des Shellys
+6. Verbinde dich nun mit deinem WLAN und rufe entweder http://<wlan_name_shelly> auf oder verbindedich über die neue IP des Shellys
 
 Ein nützliches Tool um die IP ohne Rooterzugriff herraus zu finden ist AngryIPScann
 
@@ -216,11 +216,27 @@ Füge dem DiveraJob Objekt unter groups noch die GruppenID hinzu die du abfragen
 
 Die jeweilige Gruppen ID findest du auf <https://app.divera247.com> unter Verwaltung -> Gruppen -> Aktions Button jeweilige Gruppe -> bearbeiten -> als URL Parameter id
 
-### 8. Richte deinen Raspberry Pi als Access Point ein
 
-Da Probleme beim Verbinden des Shellies mit ungesicherten Wlan-Netzen auftreten könnten. Rate ich dazu den Raspberry Pi als Accesspoint zu konfigurieren.
+Kopiere `./config/_.env` zu `./config/.env`  und öffne die Datei mit Nano
+
+```Console
+pi@raspberrypi:~/DrohnenAkkuLadesystem $ cp ./config/_.env ./config/.env
+pi@raspberrypi:~/DrohnenAkkuLadesystem $ nano ./config/./config/.env
+```
+
+```ENV
+DIVETAURI=https://app.divera247.com
+DIVERAAPIKEY=<divera_apikey>
+```
+
+Einstellung und API-Key findest du unter <https://app.divera247.com/localmanagement/index-settings-api.html>
+
+### 8. Raspberry Pi als Access Point ein einrichten
+
+Da Probleme beim Verbinden des Shellies mit ungesicherten Wlan-Netzen auftreten könnten, rate ich dazu bei jenen den Raspberry Pi als Accesspoint zu konfigurieren.
 
 Hier zu it folgende Aleitung Hilfreich:
+<https://www.elektronik-kompendium.de/sites/raspberry-pi/2002171.htm>
 
 Verbinde anschießen den Shelly mit dem vom Raspberry Pi aufgebauten Wlan.
 
@@ -237,7 +253,7 @@ Setze den Startpunkt und den Name fest
 ```Console
 pi@raspberrypi:~/DrohnenAkkuLadesystem $ pm2 start app.js --name DroLaSy
 pi@raspberrypi:~/DrohnenAkkuLadesystem $ pm2 status DroLaSy
-pi@raspberrypi:~/DrohnenAkkuLadesystem $ pm2 logs
+pi@raspberrypi:~/DrohnenAkkuLadesystem $ pm2 logs DroLaSy
 ```
 
 Setze PM2 in den Startup Prozess
