@@ -4,6 +4,9 @@
 
 ### 1. Raspberry Pi einrichten
 
+> [ ℹ️ ] 
+> >
+> In der folgenden Anleitung ist alles was in Spitzenklammer gekennzeichnet ist variabel und sollte mit den Werten ausgetaucht werden die zu der Beschreibung in den Klammer passen
 ---
 
 #### Raspberry Pi Lite installieren
@@ -38,8 +41,8 @@ ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 
 network={
-    ssid="NETZWERK-NAME"
-    psk="NETZWERK-PASSWORD"
+    ssid="<NETZWERK-NAME>"
+    psk="<NETZWERK-PASSWORD>"
 }
 ```
 Editiere die Platzhalter NETZWERK-NAME & NETZWERK-PASSWORD zu den dem entsprechenden Werten um
@@ -131,7 +134,25 @@ pi@raspberrypi:~ $ npm -v
 8.5.1
 ```
 
-### 6. Automatierung installieren und einrichten
+### 6. Richte den Shelly ein
+1. Stecke den Shelly Plug in die Steckdose oder verbinde sie anderwaltig mit dem Stromnetz
+2. Verbinde dich mit dem Wlan, das darauffolgend aufgebaut wird
+3. Öffne das Shelly Webinterface über http://192.168.33.1 oder über den Hostname: http://<wlan_name_shelly>
+4. Erstelle für den Shelly ein Benutzername und ein Passwort für das Webinterface
+5. Verbinde den Shelly mit deinem WLAN unter dem Menupunkt Internet als Wlan-Client
+6. Verbinde dich nun mit deinem WLAN und rufe entweder http://<wlan_name_shelly> auf oder verbindedich über die neue IP des Shellys
+
+Ein nützliches Tool um die IP ohne Rooterzugriff herraus zu finden ist AngryIPScann
+
+### 7. Broker installieren und konfigurieren
+Wenn du noch kein Git auf deinem RaspberryPi istalliert hast:
+
+```Console
+pi@raspberrypi:~ $ sudo apt update
+pi@raspberrypi:~ $ sudo apt install git
+```
+
+Clone dieses Github Repository:
 
 ```Console
 pi@raspberrypi:~ $ git clone https://github.com/paulhorstmann/DrohnenAkkuLadesystem.git
@@ -139,18 +160,45 @@ pi@raspberrypi:~ $ git clone https://github.com/paulhorstmann/DrohnenAkkuLadesys
 pi@raspberrypi:~ $ cd DrohnenAkkuLadesystem
 pi@raspberrypi:~/DrohnenAkkuLadesystem $ npm install
 ```
-### 7. Richte den Shelly ein
-1. Stecke den Shelly Plug in die Steckdose
-2. Verbinde dich mit dem Wlan, das darauflogend aufgebaut wird
-3. Öffne das Shelly Webinterface über http://192.168.33.1
-4. Erstelle für den Shelly ein Benutzername und ein Passwort
 
-> ❗Achtung ❗<br>
-> Erstelle dir ein kryptisches Passwort (über Keepass oder so) und in dem Passwort darf THW nicht enthalten sein
- 
-5. Verbinde den Shelly mit deinem WLAN
-6. 
-### 8. 
+Kopiere `./config/_config.json` zu `./config/config.json`  und öffne die Datei Nano
+
+```Console
+pi@raspberrypi:~/DrohnenAkkuLadesystem $ cp ./config/_config.json ./config/config.json 
+pi@raspberrypi:~/DrohnenAkkuLadesystem $ nano ./config/config.json 
+```
+
+```JSON
+{
+    "Shellys": {
+        "<shelly_name>": {
+            "ip": "<shelly_ip>",
+            "hostname": "<shelly_hostname>",
+            "username": "<shelly_username>",
+            "password": "<shelly password>"
+        }
+    },
+    "DiveraJobs": {
+        "<job_name>": {
+            "groups": [],
+            "shelly": "<shelly_name>",
+            "job": {
+                "timer": "<zeit_in_ms_nummer>"
+            }
+        }
+    },
+    "diveraCallFrequence": "*/30 * * * * *"
+}
+```
+
+
+
+### 8. Richte deinen Raspberry Pi als Access Point ein
+Da Probleme beim Verbinden des Shellies mit ungesicherten Wlan-Netzen auftreten könnten. Rate ich dazu den Raspberry Pi als Accesspoint zu konfigurieren.
+
+Hier zu it folgende Aleitung Hilfreich:
+
+Verbinde anschießen den Shelly mit dem vom Raspberry Pi aufgebauten Wlan.
 
 ### 7. Deploying mit PM2
 Installiere PM2
