@@ -234,7 +234,7 @@ Einstellung und API-Key findest du unter <https://app.divera247.com/localmanagem
 
 Da Probleme beim Verbinden des Shellies mit ungesicherten Wlan-Netzen auftreten könnten, rate ich dazu bei jenen den Raspberry Pi als Accesspoint zu konfigurieren.
 
-Hier zu it folgende Aleitung Hilfreich:
+Hier ist  folgende Anleitung hilfreich:
 <https://www.elektronik-kompendium.de/sites/raspberry-pi/2002171.htm>
 
 Verbinde anschießen den Shelly mit dem vom Raspberry Pi aufgebauten Wlan.

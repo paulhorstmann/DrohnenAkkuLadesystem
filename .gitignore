@@ -2,6 +2,6 @@
 /doc/Shelly.txt
 /build
 /node_modules
-/config/_config.json
+/config/config.json
 yarn-error.log
 yarn.lock
