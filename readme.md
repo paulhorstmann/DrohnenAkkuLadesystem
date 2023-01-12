@@ -1,4 +1,4 @@
-# Diver-Shelly-Broker - divera 24/7 🚨 ⇆ Shelly⚡
+# Divera-Shelly-Broker - divera 24/7 🚨 ⇆ Shelly⚡
 
 ## Installtion & Setup
 
